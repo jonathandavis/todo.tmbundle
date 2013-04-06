@@ -11,6 +11,7 @@
 	background-color: #FFF;
 	display: block;
 	float: left;
+	padding: 3px;
 	padding-right: 1em;
 }
 
@@ -23,6 +24,7 @@
 }
 
 #todo_list a {
+	color: #000;
 	text-decoration: none;
 }
 
@@ -30,10 +32,51 @@
 	color: #000;
 }
 
-#todo_list table td {
+#todo_list td {
+	position: relative;
 	text-align: left;
+	vertical-align: top;
+	
 }
 
 #todo_list #toplink {
 	display: none;
+}
+
+#todo_list .box {
+	padding-right: 0.5em;
+	display: inline-block;
+	border-radius: 2px;
+	border: 1px solid #000;
+	box-shadow: inset 0px 1px 2px #000;
+	margin-left: 8px;
+	margin-right: 16px;
+	padding: 0 !important;
+	opacity: 0.6;
+}
+
+#todo_list table .box {
+	position: absolute;
+	top: 0.2em;
+	width: 10px;
+	height: 10px;
+}
+
+#todo_list .counters .box {
+	border: 0;
+	box-shadow: none;
+	padding: 0;
+	margin: 0;
+	margin-right: 3px;
+}
+#todo_list .todo_comment {
+	display: inline-block;
+	margin-left: 30px;
+}
+
+#info_no_results,
+#todo_list table th,
+label,
+input {
+	display:none;
 }

@@ -1,30 +1,120 @@
+#tm_webpreview_content {
+	background: #aaa !important;	
+}
+
 #todo_list table {
 	clear: both;
-	border-collapse: collapse;
+	border-spacing: 0 1px;
+	width: 100%;
 }
 
 #todo_list h3 {
+	font-family: "Helvetica Neue";
+	font-size: 2em;
+	text-shadow: 0 1px 1px #f1f1f1;
 	clear: both;
 }
 
-#todo_list_list td, #todo_list th {
-	font-family: monospace;
+#current_dir_container {
+	text-shadow: 0 1px 1px #f1f1f1;
 }
+
+#todo_list_list td, #todo_list th {
+	font-family: "Helvetica Neue";
+	font-size: 1.2em;
+}
+
+#todo_list a {
+	color: #333;
+	text-decoration: none;
+}
+
+#todo_list a:hover {
+	border-bottom: 1px solid #333;
+}
+
 
 #todo_list th {
 	white-space: nowrap;
-	border-bottom: 1px solid #000;
 	text-align: left;
 }
 
 #todo_list th a {
+	color: #555;
 	text-decoration: none;
 }
 
+#todo_list .todo input {
+	float: left;
+}
+
 #todo_list td {
+	position:relative;
 	font-size: 9pt;
-	padding: 0.5ex 1ex 0.5ex 0;
 	vertical-align: top;
+	border-radius:3px;
+	border: 1px solid #fff;
+	padding: 3px 2px;
+	background: #f7f7f7;
+	background-image: -webkit-linear-gradient(#fafafa, #f1f1f1);
+	overflow: hidden;
+	text-shadow: 0 1px 1px #fff;
+	line-height: 1.8em;
+}
+
+#todo_list .comment {
+	border-top-right-radius: 0px;
+	border-bottom-right-radius: 0px;
+	border-right: 1px solid #ddd;
+	margin-left: -2px;
+	box-shadow: 0px 1px 2px #444;	
+}
+
+#todo_list .file {
+	border-top-left-radius: 0px;
+	border-bottom-left-radius: 0px;
+	margin-left: -2px;
+	box-shadow: 0px 1px 2px #444;
+	padding: 0px 8px;
+}
+
+#todo_list .box {
+	display: inline-block;
+	border-radius: 2px;
+	border: 1px solid #000;
+	box-shadow: inset 0px 1px 2px #000;
+	margin-left: 8px;
+	margin-right: 16px;
+	padding: 0 !important;
+	opacity: 0.6;
+}
+
+#todo_list .counters .box {
+	min-width: 2em;
+	padding-left: 3px;
+	padding-right: 3px;
+	margin-left: 8px;
+	margin-right: 8px;
+	
+}
+
+#todo_list table .box {
+	position: absolute;
+	top: 30%;
+	width: 10px;
+	height: 10px;
+}
+
+#todo_list .todo_comment {
+	display: inline-block;
+	margin-left: 40px;
+}
+
+#todo_list .item_line {
+	font-family: Menlo;
+	vertical-align: middle;
+	font-size: 7pt;
+	padding-left: 8px;
 }
 
 #todo_list tr.alternate {
@@ -43,27 +133,36 @@
 }
 
 #todo_list .counters {
+	background-image: -webkit-gradient(linear,50% 0%,50% 100%,color-stop(0%,rgba(255,255,255,0.7)),color-stop(100%,rgba(201,201,201,0.7)));
+	background-image: -webkit-linear-gradient(top,rgba(255,255,255,0.7),rgba(201,201,201,0.7));
+	border-radius: 3px;
+	box-shadow: 1px 0 0 rgba(255,255,255,0.15),-1px 0 0 rgba(255,255,255,0.15),0 1px 0 rgba(255,255,255,0.2);
+	line-height: 1.8em;
 	padding: 0;
 	overflow: hidden;
+	box-shadow: 0px 1px 2px #444;
+	
 }
 
 #todo_list .counters li {
 	display: block;
 	float: left;
 	padding: 1ex;
-	border: 1px solid #444;
 	border-collapse: collapse;
 	min-width: 6em;
 	text-align: center;
 }
 
 #todo_list .counters li a {
-	color: #FFF;
+	color: #333;
+}
+
+#todo_list .counters .alignright {
+	float: right;
 }
 
 #todo_list .bg_total, #todo_list #total_count {
-	color: #FFF;
-	background-color: #000;
+	color: #000;
 }
 
 #todo_list td.type {
@@ -92,19 +191,4 @@ label.filter {
 
 label.disabled {
   opacity: .66;
-}
-
-#filter, #trigger_relative_paths {
-	margin-left: 4em;
-}
-
-fieldset {
-	clear: both;
-}
-fieldset p {
-	margin: 0;
-}
-
-fieldset p ~ p {
-	margin-top: 1ex;
 }

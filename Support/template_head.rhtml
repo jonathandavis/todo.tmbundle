@@ -13,8 +13,9 @@
 <div id="todo_list">
 	<ul class="counters">
 		<% tags.each do |tag| %>
-			<li id="counter_tab_<%= tag[:label].sub(/\W/, '_') %>" class="bg_<%= tag[:label].sub(/\W/, '_') %>" <% if tag[:trim_if_empty] then %>style="display: none;"<% end %>><a onclick="goTo('jump_to_<%= tag[:label].sub(/\W/, '_') %>'); return false;" href="#jump_to_<%= tag[:label].sub(/\W/, '_') %>" accesskey="<%= tag[:label][0..0] %>"><%= tag[:label] %></a>: <span id="count_<%= tag[:label].sub(/\W/, '_') %>">0</span></li>
+			<li id="counter_tab_<%= tag[:label].sub(/\W/, '_') %>" <% if tag[:trim_if_empty] then %>style="display: none;"<% end %>><div class="box bg_<%= tag[:label] %>"><span id="count_<%= tag[:label].sub(/\W/, '_') %>">0</span></div><a onclick="goTo('jump_to_<%= tag[:label].sub(/\W/, '_') %>'); return false;" href="#jump_to_<%= tag[:label].sub(/\W/, '_') %>" accesskey="<%= tag[:label][0..0] %>"><%= tag[:label] %></a></li>
 		<% end %>
-		<li id="counter_tab_total" class="bg_total %>"><a href="#" onclick="return false;">Total</a>: <span id="total_count">counting…</span></li>
+		<li id="counter_tab_total"><div class="box bg_total"><span id="total_count">counting…</span></div><a href="#" onclick="return false;">Total</a></li>
+		<li class="alignright"><input type="checkbox" id="trigger_relative_paths" <% if project_dir == "" %>disabled="true"<% end %>> <label for="trigger_relative_paths" <% if project_dir == "" %>class="disabled"<% end %> title="Show relative file paths for tasks.">Paths</label>&nbsp;&nbsp;<input type="search" value="" id="filter" size="30" results="10" placeholder="Filter&hellip;" title="Filter tasks&hellip;"></li>
 	</ul>
 	<p id="current_dir_container" style="clear: both;">Scanning directory: <span id="current_dir"></span></p>
